@@ -68,6 +68,18 @@ This Version of this Project, and all other material found on this page, were co
     3. run: sudo apt-get update
     
     See [Android Studio Information](android-studio-information) for information on creating your Virtual Machine one Android Studio
+    
+3. any error with "artifact" in the message
+    
+    The artifact error message seems to be indicative of a depricated library. From my current understanding, there have been some recent changes to Android Studios primary libraries that are causing many old libraries to no longer be supported. 
+    - As of March 31 2021, the jcenter() repository no longer received updates
+    - As of February 1st 2022, the jcenter() repository was completely shut down
+    - jcenter() has been replaced with mavenCentral()
+    - mavenCentral does not seem to cover all aspects of jcenter()
+    - Switching from jcenter() -> mavenCentral(): https://onesignal.com/blog/android-migrate-jcenter-to-maven-central/
+
+
+   Oddly, it does not seem as though Android Studio has made it so that mavenCentral is the default instantiation, causing errors in repositories who are using jcenter() still, and finding that the repository is depricated and therefore it cannot be used. Furthermore this seems to hinder many of the chart libraries, as I have found a multitude of forums with people reporting similar complaints to those of my own, with the same libraries, that being any and all of the libraries that make creating charts possible. Due to being uncertain as to whether or not this is an issue with the linux IDE, or the IDE in general (seeing ass most buildscript files seem to look very different than my own) I have devided to place this information in the device secton, not the IDE section.
       
 ### Android Studio Information
 
