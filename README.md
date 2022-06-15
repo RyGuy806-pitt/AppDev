@@ -93,6 +93,9 @@ This Version of this Project, and all other material found on this page, were co
 
 1. build.gradle
 2. String Warnings
+3. AnyChart Library and Kotlin
+
+After a large multitude of trial and error I have reached a conclusion on the Chart libraries, not only AnyChart but PhilJay, etc, have paradoxical requirements after the Feb 2022 update. Kotlin projects are automatically set up in a way where it is using the android studio IDE to perform the java equivalent functions. However, our beloved chart libraries were created well before this point. Because of this it seems the Kotlin specifically is no longer capable of running AnyChart. Even after a successful project build in java out of only the Main activity, transferring the java file to a kotlin file still breaks the project. This will be my reasoning for moving from being Kotlin focused, to Java focused, in order to avoid having a similar issue again. My belief is the anychart libraries are not yet built to support Kotlin post update. This is furthered by the fact that it seems as though the initialization is completely different than it was before, where charts are not instantiated in the XML file but rather in the java file itself, after declaring a generalized chart object. This set up can be found in WorkingPieChart.zip.
 
 ### App Specific Information
 
