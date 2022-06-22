@@ -84,9 +84,30 @@ This Version of this Project, and all other material found on this page, were co
 ### Android Studio Information
 
 1. Kotlin to Java
+	
+	This feature can be very useful for more basic applications, however it currently seems to have a few problems. While debugging the AnyChart library, and attempting to get it to work in Kotlin, I came across a rather strange discovery. AnyChart itself, does not seem to be broken, and actually functions rather easily while using Java to be created. However, Kotlin does not go as smoothly. I had no success attempting to add anyChart to any Kotlin project after rewriting the Gradle Script and Builds a large multitude of times. It seems that there were already problems with this Prior to the Feb 2022 update, but now there is not a found solution in order to solve this discrepency. 
+	After creating a successful project with AnyChart in java, I attempted to switch the file to Kotlin. The project did not even finish building the gradle before sending a slew of error messages, none of which had appeared on the java end of things. I think MavenCentral will continue to make any old custom Widgets accessible in Android Studio in the future.
+	
 2. Create a Virtual Device
 3. Icon Manipulation
 4. Importing Custom Widgets
+	
+	This can be completed via following a majority of Github pages ReadMe files, for which you are taking the widget from, however the most basic and nearly always required step is going to the build.gradle(Module) and scroll to the bottom, you should see something like
+	
+	dependencies {
+
+    		implementation 'androidx.appcompat:appcompat:1.4.2'
+    		implementation 'com.google.android.material:material:1.6.1'
+    		implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    		testImplementation 'junit:junit:4.13.2'
+    		androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    		androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+	}
+	
+	In which you will want to add "implementation 'YOUR_LINK_HERE'"
+	
+	You may need to edit the build.gradle(Project) file in some cases, as well as gradle.properties on occasions.
+	
 5. Color Manipulation
 
 ### Kotlin Library Information
@@ -108,3 +129,5 @@ After a large multitude of trial and error I have reached a conclusion on the Ch
 3. Bluetooth info: https://www.youtube.com/watch?v=Oz4CBHrxMMs
 4. Timer App: https://www.youtube.com/watch?v=E40uAdVr85M
 5. Chart info: https://www.youtube.com/watch?v=kUrmZjUOEyc
+6. SettingsUI: https://www.youtube.com/watch?v=Px5u3wz3g-U
+
