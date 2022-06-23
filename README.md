@@ -89,8 +89,21 @@ This Version of this Project, and all other material found on this page, were co
 	After creating a successful project with AnyChart in java, I attempted to switch the file to Kotlin. The project did not even finish building the gradle before sending a slew of error messages, none of which had appeared on the java end of things. I think MavenCentral will continue to make any old custom Widgets accessible in Android Studio in the future.
 	
 2. Create a Virtual Device
-3. Icon Manipulation
-4. Importing Custom Widgets
+3. Bluetooth Device
+	
+	The requirements for using a bluetooth device on android studio have changed since the Feb 2022 update
+	
+	    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    
+    	These should all be added to your Manifest file, at line 5
+	The disable command that used to come with the bluetooth device now requires special permissions to be checked be for the user can access them. In order to disable this
+	
+	File>>Settings>>Editor>>Inspections>>Android>>Lint>>Correctness>>find missing permissions and uncheck its box
+5. Icon Manipulation
+6. Importing Custom Widgets
 	
 	This can be completed via following a majority of Github pages ReadMe files, for which you are taking the widget from, however the most basic and nearly always required step is going to the build.gradle(Module) and scroll to the bottom, you should see something like
 	
