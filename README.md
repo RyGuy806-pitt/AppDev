@@ -79,7 +79,7 @@ This Version of this Project, and all other material found on this page, were co
     - Switching from jcenter() -> mavenCentral(): https://onesignal.com/blog/android-migrate-jcenter-to-maven-central/
 
 
-   Oddly, it does not seem as though Android Studio has made it so that mavenCentral is the default instantiation, causing errors in repositories who are using jcenter() still, and finding that the repository is depricated and therefore it cannot be used. Furthermore this seems to hinder many of the chart libraries, as I have found a multitude of forums with people reporting similar complaints to those of my own, with the same libraries, that being any and all of the libraries that make creating charts possible. Due to being uncertain as to whether or not this is an issue with the linux IDE, or the IDE in general (seeing ass most buildscript files seem to look very different than my own) I have devided to place this information in the device secton, not the IDE section.
+   Oddly, it does not seem as though Android Studio has made it so that mavenCentral is the default instantiation, causing errors in repositories who are using jcenter() still, and finding that the repository is depricated and therefore it cannot be used. Furthermore this seems to hinder many of the chart libraries, as I have found a multitude of forums with people reporting similar complaints to those of my own, with the same libraries, that being any and all of the libraries that make creating charts possible. Due to being uncertain as to whether or not this is an issue with the linux IDE, or the IDE in general (seeing ass most buildscript files seem to look very different than my own) I have devided to place this information in the device secton, not the IDE section. See [Kotlin Library Information](#kotlin-library-information) for more
       
 ### Android Studio Information
 
@@ -89,21 +89,32 @@ This Version of this Project, and all other material found on this page, were co
 	After creating a successful project with AnyChart in java, I attempted to switch the file to Kotlin. The project did not even finish building the gradle before sending a slew of error messages, none of which had appeared on the java end of things. I think MavenCentral will continue to make any old custom Widgets accessible in Android Studio in the future.
 	
 2. Create a Virtual Device
+
+	Before any app can be created with Android Studio you will need access to one of two things. A. A samsung device. It does not really matter what the device is, assuming that it is relatively similar in its capabilities to the device you primarily intend your app to be for. This way you will be able to download and launch your app in order to test it and see how it runs, the problem with this method is that you will need to redownload the app each time you make an adjustment in order to witness the change and the effects that it has had.
+	The other option is creating a Virtual Device. Please see more [System and Device Information](#system-and-device-information) for more information about it your CPU is capable of running a Virtual Machine in the first place. Assuming you have checked all of that off, all you need to do is go into the Android Studio IDE and look at the right hand side of the screen. Click Device Manager, and click create device under the virtual tab. I would recommend going for the newest model Nexus or Pixel, as they seem to have compatibility across most of the APIs. Once you have created a Device, that will become the default that is run on while running and testing the application.
+	
 3. Bluetooth Device
 	
 	The requirements for using a bluetooth device on android studio have changed since the Feb 2022 update
 	
 	    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    	<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    	<uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
     
-    	These should all be added to your Manifest file, at line 5
-	The disable command that used to come with the bluetooth device now requires special permissions to be checked be for the user can access them. In order to disable this
+    	
+	These should all be added to your Manifest file, at line 5. The disable command that used to come with the bluetooth device now requires special
+permissions to be checked be for the user can access them. In order to disable this
 	
 	File>>Settings>>Editor>>Inspections>>Android>>Lint>>Correctness>>find missing permissions and uncheck its box
-5. Icon Manipulation
-6. Importing Custom Widgets
+	
+4. Icon Manipulation
+
+	When looking to use another Image not already downloaded by your file, you will want to go to the project folders and find where "drawable" is. Once you have found this, left click>>New>>Vector Asset>>click on the image icon, and replace it with something of your choice. Once you do this, save the vector asset with whatever name you would like. now when calling upon the image, usually it will be the src attribute that you want to send it to, so
+	
+	android:src="@drawable/FILE_NAME_HERE"
+	
+5. Importing Custom Widgets
 	
 	This can be completed via following a majority of Github pages ReadMe files, for which you are taking the widget from, however the most basic and nearly always required step is going to the build.gradle(Module) and scroll to the bottom, you should see something like
 	
@@ -122,11 +133,27 @@ This Version of this Project, and all other material found on this page, were co
 	You may need to edit the build.gradle(Project) file in some cases, as well as gradle.properties on occasions.
 	
 5. Color Manipulation
+	
+	Most color calling is done via entering the hex value of the color you would like to appear as the background attribute for different objects. However if you would like to only make a specific area, such as a bubble behind an image a different color, you must go about this a little different in order to not overfill or underfill the area you are intending to place the color. Through a similar process as the Icon Manipilation: left click drawable>>New>>Drawable Resource File. Once you have done this you will have a file that you can edit at will. For color specifically you will want to change the "selector" option to "shape". Here is an example, with the same one as well as others all being found in the SettingsUI project.
+	
+		<?xml version="1.0" encoding="utf-8"?>
+		<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle"
+   		 >
+
+    		<solid android:color="@color/notifications"/>
+    		<corners android:radius="100dp"/>
+		</shape>
 
 ### Kotlin Library Information
 
 1. build.gradle
+
+Just as I have myself, I am certain a lot of people will look at a large multitude of the online examples and tutorials created on android studio, and be confused why the initial project build before editting is different than what other people's looks like. I have come to discover a few things: these files seem to be created based off 2 key components: operating system, and java SDK. depending what you have downloaded and how it is operating, your gradle build is going to have different requirements and standards than that of your computer related collegues. Noteably: many of the old settups on youtube should not be copied or use, those libraries are beginning to be depricated, and will realistically make those tutorials and examples worthless by the time those libraries have had time to develope. So, as a standing point, unless a tutorial adds something specifically to the build.gradle files, do not edit them to mirror what you may see on someone else screen.
+
 2. String Warnings
+
+The String warning has a rather easy fix, and is moreso just an eyesore especially when debugging than it is an actual hinderence. ALl you need to do to get rid of the warning is type in the string normally. Hover over the string with your mouse until the light bulb appears to the left. Clikc the lightbulb, and click the first option. A pop up window will pop and and you will hit ok, and the warnin gshould disappear after that. You will have to do this for each different string you wish to implement.
+
 3. AnyChart Library and Kotlin
 
 After a large multitude of trial and error I have reached a conclusion on the Chart libraries, not only AnyChart but PhilJay, etc, have paradoxical requirements after the Feb 2022 update. Kotlin projects are automatically set up in a way where it is using the android studio IDE to perform the java equivalent functions. However, our beloved chart libraries were created well before this point. Because of this it seems the Kotlin specifically is no longer capable of running AnyChart. Even after a successful project build in java out of only the Main activity, transferring the java file to a kotlin file still breaks the project. This will be my reasoning for moving from being Kotlin focused, to Java focused, in order to avoid having a similar issue again. My belief is the anychart libraries are not yet built to support Kotlin post update. This is furthered by the fact that it seems as though the initialization is completely different than it was before, where charts are not instantiated in the XML file but rather in the java file itself, after declaring a generalized chart object. This set up can be found in WorkingPieChart.zip.
