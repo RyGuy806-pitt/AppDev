@@ -150,6 +150,9 @@ permissions to be checked be for the user can access them. In order to disable t
 
 Just as I have myself, I am certain a lot of people will look at a large multitude of the online examples and tutorials created on android studio, and be confused why the initial project build before editting is different than what other people's looks like. I have come to discover a few things: these files seem to be created based off 2 key components: operating system, and java SDK. depending what you have downloaded and how it is operating, your gradle build is going to have different requirements and standards than that of your computer related collegues. Noteably: many of the old settups on youtube should not be copied or use, those libraries are beginning to be depricated, and will realistically make those tutorials and examples worthless by the time those libraries have had time to develope. So, as a standing point, unless a tutorial adds something specifically to the build.gradle files, do not edit them to mirror what you may see on someone else screen.
 
+Update 1
+org.gradle.api.internal.artifacts.ivyservice.DefaultLenientConfiguration$ArtifactResolveException: Could not resolve all files for configuration ':app:debugRuntimeClasspath: After doing further research I have found, https://www.youtube.com/watch?v=4oPPG7g0MV0. Althought I do not necessarily need to implement this fix, it seems to fix the problem that I was having in the AnyChart library section of this information. It seems as though this is intended to be a video on using Kotlin with the new build.gradle set up, however it is very difficult for me to understand, and therefore I am not 100% certain what the overall purpose of this video is, other than it seems to fix something.
+
 2. String Warnings
 
 The String warning has a rather easy fix, and is moreso just an eyesore especially when debugging than it is an actual hinderence. ALl you need to do to get rid of the warning is type in the string normally. Hover over the string with your mouse until the light bulb appears to the left. Clikc the lightbulb, and click the first option. A pop up window will pop and and you will hit ok, and the warnin gshould disappear after that. You will have to do this for each different string you wish to implement.
@@ -170,4 +173,5 @@ After a large multitude of trial and error I have reached a conclusion on the Ch
 4. Timer App: https://www.youtube.com/watch?v=E40uAdVr85M
 5. Chart info: https://www.youtube.com/watch?v=kUrmZjUOEyc
 6. SettingsUI: https://www.youtube.com/watch?v=Px5u3wz3g-U
+7. Kotlin fix: https://www.youtube.com/watch?v=4oPPG7g0MV0
 
