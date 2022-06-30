@@ -143,6 +143,10 @@ permissions to be checked be for the user can access them. In order to disable t
     		<solid android:color="@color/notifications"/>
     		<corners android:radius="100dp"/>
 		</shape>
+		
+6. Fragment Warning
+
+When using any of the prebuilt templates for your app, beware of the debugging process you take. You may add a relative layout or another widget, and be given a warning that you need to replace the fragment with another widget like a RelativeFragment. This will continually make the app crash if the template was build using said fragment. Ignore this warning and it seems to go away at the end, or be replaced with another error/warning. The purpose of this other widget is to be something that can only be pulled up once while running the app before it is removed from the app, which is not what we want to occur in this example.
 
 ### Kotlin Library Information
 
@@ -163,6 +167,9 @@ After a large multitude of trial and error I have reached a conclusion on the Ch
 
 ### App Specific Information
 
+1. Bluetooth Tonometer
+
+The idea of performing a tonometer test at home was not realistic until more recent times. Due to this I have had a very difficult time finding any information that a bluetooth tonometer would be attempting to send, because most of the tonometers that exist either A. are not bluetooth or B. are designed to interface with a specific software platform that is not displaying what they are doing with the data they receive from the device. This has resulted in the functionality of this app being a problem. I do not know specifically what new data is constantly, or even worse inconsistently, being received by the device,and what needs to be done with that information, as well as not having a proper database to actually store specific client information in. This project will be made in a way that it assumes a user has been logged in, and the app will have access to static data values as representation, which could/should easily be able to be replaced with information store and received from a database
 
 
 ### References and Sources
