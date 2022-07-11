@@ -181,4 +181,5 @@ The idea of performing a tonometer test at home was not realistic until more rec
 5. Chart info: https://www.youtube.com/watch?v=kUrmZjUOEyc
 6. SettingsUI: https://www.youtube.com/watch?v=Px5u3wz3g-U
 7. Kotlin fix: https://www.youtube.com/watch?v=4oPPG7g0MV0
+8. Multiple Charts: https://github.com/AnyChart/AnyChart-Android/wiki/Multiple-charts-in-a-single-layout
 
