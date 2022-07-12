@@ -177,6 +177,8 @@ The idea of performing a tonometer test at home was not realistic until more rec
 
 In the process of creating my prototype, I have discovered an Issue that seems to be being ignored by the library creators. When adding multiple charts to a singular activity or fragment, and they are contained within a scrollview, the page has a difficult time loading more than a singular chart at a time, so: whichever chart comes last sequentially in the code is the one that will appear, in the intended place. The other charts appear white. The only reference to resolve this problem from the creators can be found in [References and Sources](#references-and-sources) #8, but even in that conversation, the creator says there is nothing else he can refer us to if the intended method is not working correctly.
 
+Update: this method does allow for multiple charts to appear, however it is very order specific, and will not work otherwise.
+
 
 ### References and Sources
 
