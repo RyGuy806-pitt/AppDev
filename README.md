@@ -69,6 +69,8 @@ This Version of this Project, and all other material found on this page, were co
     
     See [Android Studio Information](android-studio-information) for information on creating your Virtual Machine one Android Studio
     
+    **NOTA BENA**: This seems to be the case for my computer, and probably most others as well, these BIOS setting changes will only remain until your laptop has completely shut down. Sleep mode does not seem to reset these settings, however upon dying my laptop delivers a message saying it has restored its default settings. There is a way to save current settings as default settings, however I will not be going over that here, as it is not very relevant to the topic at hand.
+    
 3. any error with "artifact" in the message
     
     The artifact error message seems to be indicative of a depricated library. From my current understanding, there have been some recent changes to Android Studios primary libraries that are causing many old libraries to no longer be supported. 
@@ -170,6 +172,10 @@ After a large multitude of trial and error I have reached a conclusion on the Ch
 1. Bluetooth Tonometer
 
 The idea of performing a tonometer test at home was not realistic until more recent times. Due to this I have had a very difficult time finding any information that a bluetooth tonometer would be attempting to send, because most of the tonometers that exist either A. are not bluetooth or B. are designed to interface with a specific software platform that is not displaying what they are doing with the data they receive from the device. This has resulted in the functionality of this app being a problem. I do not know specifically what new data is constantly, or even worse inconsistently, being received by the device,and what needs to be done with that information, as well as not having a proper database to actually store specific client information in. This project will be made in a way that it assumes a user has been logged in, and the app will have access to static data values as representation, which could/should easily be able to be replaced with information store and received from a database
+
+2. AnyChart Library Issues
+
+In the process of creating my prototype, I have discovered an Issue that seems to be being ignored by the library creators. When adding multiple charts to a singular activity or fragment, and they are contained within a scrollview, the page has a difficult time loading more than a singular chart at a time, so: whichever chart comes last sequentially in the code is the one that will appear, in the intended place. The other charts appear white. The only reference to resolve this problem from the creators can be found in [References and Sources](#references-and-sources) #8, but even in that conversation, the creator says there is nothing else he can refer us to if the intended method is not working correctly.
 
 
 ### References and Sources
