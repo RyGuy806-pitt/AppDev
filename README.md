@@ -179,6 +179,33 @@ In the process of creating my prototype, I have discovered an Issue that seems t
 
 Update: this method does allow for multiple charts to appear, however it is very order specific, and will not work otherwise.
 
+3. Basic App Layout
+
+At this point in time there are 3 sections to the app. They will be referred to here as "Test Page", "Data Page", and "Settings". Here I will leave information on the intended uses of this project, as well as any manipulation that will go into this.
+
+	A. Test Page
+	
+	This is a rather simplistic part of the app that simply contains a button. This button will trigger the beginning and end of a test, which will send the recorded data to the accounts specific profile, once a databases information has been linked to the app. The primary purpose as of now is for a tonometer to be connected to the app, and then record pressure readings, duration of time, and more, however without an actual tonometer, there is not a good way to assume what inputs will be coming in. Because of this there is not much functionality to this page. Going forward, I plan to add the bluetooth connection button to this page, as it seems to be more logical to place it there, than on the login screen as originally seen on te iOS version of the app. I also intend to change the design of the button to be larger and more noticeable, due to the intended clientel this app is for, however at this moment in time the focus has primarily been on having the app running with only the absolutely necessary functionality.
+	
+	B. Data Page
+	
+	Here all the users personal data will be accessible to them and displayed via chart. This page, once again, is rather simple, and currently contains 3 charts, using static data values as examples for the display. Once again, when a database's information is linked to the app. These charts are provided by the AnyChart library, and currently uses 2 bar graphs and a line graph as the displays. The great part about using AnyChart is the flexibility of the library. Rather than each chart type being different, they are set up as an object of type AnyChart. In more simple terms, the widget used for the chart is initially just a large blank square on the page. Once you have designated in the Java or Kotlin file what type of chart you would like to appear there, that is when the data will be used to create that graph. Unless you go into a 3+ dimensional data format, all the charts have data added to them with the same commands, so changing simply the object type is enough to change the output of the chart on the page. Here I will show you how to add another chart, due to there being some issues with the library when trying to display multiple charts on one fragment.
+	
+	
+	Please also note: if you are seeing white squares rather than a chart appear, you have no completed the set up correctly. If you are experiencing this my top recommendation would be to make sure you have changed all variable names for your new graph. using the same object and rewriting its values will not work, and essentially just remove the data from the code in its entirety, to the point that neither graph trying to use those values will display anything. The only values allowed to be shared are that of the data being entered.
+	
+	C. Settings Page
+	
+	Here I have set up a basic interface for a multitude of random settings at the moment. Seeing as I don't have much information on who will be using the app, and what settings adjustments would be useful, there is not a lot of functionality for me to add. However, I have set this up so creating new tabs or sections is as simple as adding another block of code to the XML file. You will be easily capable of adjusting what information that setting takes (text input, switch, or display), as well as the color and icon associated with that setting. Adding a new color is explained in [Android Studio Information](#android-studio-information), but adding new settings visually is performed as follows.
+	
+	D. Next Interface steps
+	
+	The part of this that I wish I had had more time to work on involves issues with Android Studios premade templates, and how fragments and activities interact. Adding a activity before the primary activity (that being the apps current state), would complete this app, as that would be the login page. However upon adding this a multitude of different ways, it seems to cause the app to crash once any tab is clicked more than once. Furthermore, this feature, although relevant, is rather useless unless it is actually being checked against a database, which once again is simply not something I had time to perform. Beyond this the interface is complete to a degree that it should be easily customizable, but at the same time most primary functionality in the app would not change.
+	
+	E. Additional Future Steps
+	
+	Any one with experiences in databases could quickly take this project to the next level. By adding actual account information and a place for data to be stored, as well as switching the static values with those coming from the account information, the app would be fully functional, minus whatever actions would be intended to be performed by the official settings.
+
 
 ### References and Sources
 
