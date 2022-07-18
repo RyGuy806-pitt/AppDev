@@ -189,7 +189,24 @@ This is a rather simplistic part of the app that simply contains a button. This 
 	
 B. Data Page
 	
-Here all the users personal data will be accessible to them and displayed via chart. This page, once again, is rather simple, and currently contains 3 charts, using static data values as examples for the display. Once again, when a database's information is linked to the app. These charts are provided by the AnyChart library, and currently uses 2 bar graphs and a line graph as the displays. The great part about using AnyChart is the flexibility of the library. Rather than each chart type being different, they are set up as an object of type AnyChart. In more simple terms, the widget used for the chart is initially just a large blank square on the page. Once you have designated in the Java or Kotlin file what type of chart you would like to appear there, that is when the data will be used to create that graph. Unless you go into a 3+ dimensional data format, all the charts have data added to them with the same commands, so changing simply the object type is enough to change the output of the chart on the page. Here I will show you how to add another chart, due to there being some issues with the library when trying to display multiple charts on one fragment.
+Here all the users personal data will be accessible to them and displayed via chart. This page, once again, is rather simple, and currently contains 3 charts, using static data values as examples for the display. Once again, when a database's information is linked to the app. These charts are provided by the AnyChart library, and currently uses 2 bar graphs and a line graph as the displays. The great part about using AnyChart is the flexibility of the library. Rather than each chart type being different, they are set up as an object of type AnyChart. In more simple terms, the widget used for the chart is initially just a large blank square on the page. Once you have designated in the Java or Kotlin file what type of chart you would like to appear there, that is when the data will be used to create that graph. Unless you go into a 3+ dimensional data format, all the charts have data added to them with the same commands, so changing simply the object type is enough to change the output of the chart on the page. Here I will show you how to add another chart, due to there being some issues with the library when trying to display multiple charts on one fragment.\
+
+YOUR_PROJECT_ACTIVITY.java
+
+	**In onCreateView**
+	AnyChartView chart = root.findViewById(R.id.chart);
+	APIlib.getInstance().setActiveAnChart(chart);
+	
+	Cartesian Column = AnyChart.column();
+	
+	List<DataEntry> dataEntries = new ArrayList<>();
+	//fill dataEntries
+	
+	Column.data(dataEntries);
+	Column.title("Tests per Day");
+	
+	Column.background().fill("@color/white");
+	chart.setChart(Column);
 	
 	
 Please also note: if you are seeing white squares rather than a chart appear, you have no completed the set up correctly. If you are experiencing this my top recommendation would be to make sure you have changed all variable names for your new graph. using the same object and rewriting its values will not work, and essentially just remove the data from the code in its entirety, to the point that neither graph trying to use those values will display anything. The only values allowed to be shared are that of the data being entered.
@@ -197,6 +214,39 @@ Please also note: if you are seeing white squares rather than a chart appear, yo
 C. Settings Page
 	
 Here I have set up a basic interface for a multitude of random settings at the moment. Seeing as I don't have much information on who will be using the app, and what settings adjustments would be useful, there is not a lot of functionality for me to add. However, I have set this up so creating new tabs or sections is as simple as adding another block of code to the XML file. You will be easily capable of adjusting what information that setting takes (text input, switch, or display), as well as the color and icon associated with that setting. Adding a new color is explained in [Android Studio Information](#android-studio-information), but adding new settings visually is performed as follows.
+
+	**In Settings XML**
+	<RelativeLayout
+	   android:layout_width="match_parent"
+	   android:layout_height="wrap_context">
+	   
+	   <TextView
+	      android:layout_width="wrap_context"
+	      android:layout_height="wrap_context"
+	      android:layout_marginLeft="60dp"
+	      android:layout_marginTop="10dp"
+	      android:text="Night Mode"
+	      android:textColor="#000000"
+	      android:textStyle="bold"></TextView>
+	    
+	   <ImageView
+	      android:id="@+id/nightModeIcon" //insert icon of your choices as a drawable file here
+	      android:layout_width="40dp"
+	      android:layout_height="40dp"
+	      android:layout_marginLeft="10dp"
+	      android:padding="12dp"
+	      android:background="drawable/round_back_night_mode" //insert drawable file with custom chape design here
+	      android:src="drawable/ic_baseline_nights_stay_24"></ImageView>
+	      
+	   <androidx.appcompat.widget.SwitchCompat
+	      android:layout_width="wrap_context"
+	      android:layout_height="wrap"
+	      android:layout_marginLeft="10dp"
+	      android:layout_centerVertical="true"
+	      android:switchMindWidth=50dp"
+	      android:theme="@style/nightModeSwitch"></androidx.appcompat.widget.SwitchCompat>
+	      
+	</Relative Layout>
 	
 D. Next Interface steps
 	
