@@ -11,6 +11,10 @@ Nota Bene: I, Ryan Hankee, am not attempting to copy the work found on this proj
 
 This Version of this Project, and all other material found on this page, were completed by me, Ryan Hankee, during the summer of 2022, during my intern/research program with University of Pittsburgh's head of the Electrical and Computer Engineering Department, Dr. Dickerson. The over arching goal of this project was slightly different than those who attempted this before me. For them, this was a design project with a focus on making a project that would have a positive influence on society. I, on the other hand, used this project as a chance to familiarize myself with front end development. I have not had many chances in my personal collegiate career to work on the front end, especially User Interfaces. The class that most people learn about that in at the University of Pittsburgh randomly had me create a hardware interface, with no software components. So I decided to take this chance to see what User Interface, as well as mobile app developement.
 
+## To Get Started
+
+The project is the WorkingPrototype directory. From Here, each level of files has its own READ.me file, if it needs one. Most of these files are just instructions on properly unzipping files into their intended directory. If these are not followed correctly, the project will not run. Furthermore, if you need to troubleshoot this project, start a new project with the 3 tab template, and move all the gradle, XML, and java files to that project, as most of the memory issues with this project are caused by intermediate tests run on the code to ensure it will not break. If there is no READ.me file in a directory, there are no more READ.mes below it, and there are no instructions to change anything at that file level specifically.
+
 ## Topics Covered
   - Multiple Activity Interaction
   - Multiple Fragment Interaction
