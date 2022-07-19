@@ -186,6 +186,8 @@ At this point in time there are 3 sections to the app. They will be referred to 
 A. Test Page
 	
 This is a rather simplistic part of the app that simply contains a button. This button will trigger the beginning and end of a test, which will send the recorded data to the accounts specific profile, once a databases information has been linked to the app. The primary purpose as of now is for a tonometer to be connected to the app, and then record pressure readings, duration of time, and more, however without an actual tonometer, there is not a good way to assume what inputs will be coming in. Because of this there is not much functionality to this page. Going forward, I plan to add the bluetooth connection button to this page, as it seems to be more logical to place it there, than on the login screen as originally seen on te iOS version of the app. I also intend to change the design of the button to be larger and more noticeable, due to the intended clientel this app is for, however at this moment in time the focus has primarily been on having the app running with only the absolutely necessary functionality.
+
+![Screenshot from 2022-07-19 11-59-50](https://user-images.githubusercontent.com/77860961/179801565-1b3f9936-6799-4065-bd27-6eb990eea8a7.png)
 	
 B. Data Page
 	
@@ -210,6 +212,10 @@ YOUR_PROJECT_ACTIVITY.java
 	
 	
 Please also note: if you are seeing white squares rather than a chart appear, you have no completed the set up correctly. If you are experiencing this my top recommendation would be to make sure you have changed all variable names for your new graph. using the same object and rewriting its values will not work, and essentially just remove the data from the code in its entirety, to the point that neither graph trying to use those values will display anything. The only values allowed to be shared are that of the data being entered.
+
+
+![Screenshot from 2022-07-19 12-00-08](https://user-images.githubusercontent.com/77860961/179801816-cf3e081d-5008-44f0-92b7-1a1dfa8b1b31.png)
+![Screenshot from 2022-07-19 12-00-31](https://user-images.githubusercontent.com/77860961/179801826-86cd5f69-a458-4faf-b1ec-7d5c5fe976c4.png)
 	
 C. Settings Page
 	
@@ -248,6 +254,9 @@ Here I have set up a basic interface for a multitude of random settings at the m
 	      
 	</Relative Layout>
 	
+![Screenshot from 2022-07-19 12-00-46](https://user-images.githubusercontent.com/77860961/179801850-9a1b1757-5184-4e24-a5b9-a17737aaafd3.png)
+
+
 D. Next Interface steps
 	
 The part of this that I wish I had had more time to work on involves issues with Android Studios premade templates, and how fragments and activities interact. Adding a activity before the primary activity (that being the apps current state), would complete this app, as that would be the login page. However upon adding this a multitude of different ways, it seems to cause the app to crash once any tab is clicked more than once. Furthermore, this feature, although relevant, is rather useless unless it is actually being checked against a database, which once again is simply not something I had time to perform. Beyond this the interface is complete to a degree that it should be easily customizable, but at the same time most primary functionality in the app would not change.
