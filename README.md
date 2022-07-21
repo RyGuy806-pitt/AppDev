@@ -192,6 +192,8 @@ A. Test Page
 This is a rather simplistic part of the app that simply contains a button. This button will trigger the beginning and end of a test, which will send the recorded data to the accounts specific profile, once a databases information has been linked to the app. The primary purpose as of now is for a tonometer to be connected to the app, and then record pressure readings, duration of time, and more, however without an actual tonometer, there is not a good way to assume what inputs will be coming in. Because of this there is not much functionality to this page. Going forward, I plan to add the bluetooth connection button to this page, as it seems to be more logical to place it there, than on the login screen as originally seen on te iOS version of the app. I also intend to change the design of the button to be larger and more noticeable, due to the intended clientel this app is for, however at this moment in time the focus has primarily been on having the app running with only the absolutely necessary functionality.
 
 ![Screenshot from 2022-07-19 11-59-50](https://user-images.githubusercontent.com/77860961/179801565-1b3f9936-6799-4065-bd27-6eb990eea8a7.png)
+![Screenshot from 2022-07-21 12-48-21](https://user-images.githubusercontent.com/77860961/180269652-eaaacf39-0214-4a3a-9ae6-1f888a4a3757.png)
+
 	
 B. Data Page
 	
@@ -220,6 +222,7 @@ Please also note: if you are seeing white squares rather than a chart appear, yo
 
 ![Screenshot from 2022-07-19 12-00-08](https://user-images.githubusercontent.com/77860961/179801816-cf3e081d-5008-44f0-92b7-1a1dfa8b1b31.png)
 ![Screenshot from 2022-07-19 12-00-31](https://user-images.githubusercontent.com/77860961/179801826-86cd5f69-a458-4faf-b1ec-7d5c5fe976c4.png)
+![Screenshot from 2022-07-21 12-48-12](https://user-images.githubusercontent.com/77860961/180269642-78111d35-f08c-4f07-946c-8f9cf50999d7.png)
 	
 C. Settings Page
 	
@@ -259,7 +262,7 @@ Here I have set up a basic interface for a multitude of random settings at the m
 	</Relative Layout>
 	
 ![Screenshot from 2022-07-19 12-00-46](https://user-images.githubusercontent.com/77860961/179801850-9a1b1757-5184-4e24-a5b9-a17737aaafd3.png)
-
+![Screenshot from 2022-07-21 12-46-55](https://user-images.githubusercontent.com/77860961/180269633-e53cf857-0927-4c96-b354-276a326d4ae9.png)
 
 D. Next Interface steps
 	
