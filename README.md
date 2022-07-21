@@ -219,9 +219,6 @@ YOUR_PROJECT_ACTIVITY.java
 	
 Please also note: if you are seeing white squares rather than a chart appear, you have no completed the set up correctly. If you are experiencing this my top recommendation would be to make sure you have changed all variable names for your new graph. using the same object and rewriting its values will not work, and essentially just remove the data from the code in its entirety, to the point that neither graph trying to use those values will display anything. The only values allowed to be shared are that of the data being entered.
 
-
-![Screenshot from 2022-07-19 12-00-08](https://user-images.githubusercontent.com/77860961/179801816-cf3e081d-5008-44f0-92b7-1a1dfa8b1b31.png)
-![Screenshot from 2022-07-19 12-00-31](https://user-images.githubusercontent.com/77860961/179801826-86cd5f69-a458-4faf-b1ec-7d5c5fe976c4.png)
 ![Screenshot from 2022-07-21 12-48-12](https://user-images.githubusercontent.com/77860961/180269642-78111d35-f08c-4f07-946c-8f9cf50999d7.png)
 	
 C. Settings Page
@@ -261,7 +258,6 @@ Here I have set up a basic interface for a multitude of random settings at the m
 	      
 	</Relative Layout>
 	
-![Screenshot from 2022-07-19 12-00-46](https://user-images.githubusercontent.com/77860961/179801850-9a1b1757-5184-4e24-a5b9-a17737aaafd3.png)
 ![Screenshot from 2022-07-21 12-46-55](https://user-images.githubusercontent.com/77860961/180269633-e53cf857-0927-4c96-b354-276a326d4ae9.png)
 
 D. Next Interface steps
